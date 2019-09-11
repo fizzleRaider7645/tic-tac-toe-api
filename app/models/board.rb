@@ -29,4 +29,16 @@ class Board < ApplicationRecord
             return false
         end
     end
+
+    def position_taken?(index)
+        !(self.grid[index].nil? || self.grid[index] == "")
+      end
+
+    def won?
+        WIN_COMBINATIONS.detect do |combo|
+          self.grid[combo[0]] == self.grid[combo[1]] &&
+          self.grid[combo[1]] == self.grid[combo[2]] &&
+          position_taken?(combo[0])
+        end
+      end
 end
