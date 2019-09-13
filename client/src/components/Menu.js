@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-class Board extends Component {
+
+class Menu extends Component {
     constructor() {
         super()
     }
 
     render() {
         return (
-            <div id="board">
-                Board
+            <div id="menu">
+                Menu
             </div>
         )
     }
 }
-
-export default Board
