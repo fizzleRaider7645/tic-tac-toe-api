@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Cell from './Cell';
+
 class Board extends Component {
     constructor() {
         super()
@@ -8,6 +10,7 @@ class Board extends Component {
         return (
             <div id="board">
            Board
+           <Cell />
             </div>
         )
     }
