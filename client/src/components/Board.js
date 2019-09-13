@@ -7,7 +7,7 @@ class Board extends Component {
     render() {
         return (
             <div id="board">
-                Board
+           Board
             </div>
         )
     }
