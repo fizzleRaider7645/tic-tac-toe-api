@@ -1,8 +1,8 @@
 import React from 'react';
-
+import '../App.css'
 const Cell = props => {
     return (
-        <button>
+        <button className="cell">
             {props.value}
         </button>
     )
