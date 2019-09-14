@@ -2,9 +2,9 @@ import React from 'react';
 
 const Cell = props => {
     return (
-        <div>
-            Cell
-        </div>
+        <button>
+            {props.value}
+        </button>
     )
 }
 
