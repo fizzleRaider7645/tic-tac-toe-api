@@ -6,6 +6,10 @@ class Board extends Component {
         super()
     }
 
+    renderCell(i) {
+        return <Cell value={i}/>
+    }
+
     render() {
         return (
             <div id="board">
