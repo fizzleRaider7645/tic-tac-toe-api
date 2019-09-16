@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import Cell from './Cell'
+import Game from '../modules/gameLogic';
 
 class Board extends Component {
     constructor() {
         super()
+    }
+
+    componentDidMount() {
+        const g = new Game([])
+        debugger
     }
 
     renderCell(i) {
