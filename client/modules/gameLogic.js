@@ -12,3 +12,10 @@ const WIN_COMBINATIONS = [
   [0,4,8],
   [6,4,2]
 ]
+
+function won(board)
+  WIN_COMBINATIONS.find((combo) => {
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    positionTaken(board, combo[0])
+  });
