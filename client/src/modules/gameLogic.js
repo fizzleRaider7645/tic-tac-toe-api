@@ -5,11 +5,16 @@ export default class Game {
 }
 
 Game.prototype.won = function() {
-  return this.WIN_COMBINATIONS.find((combo) => {
+  const winningCombo = this.WIN_COMBINATIONS.find((combo) => {
     return this.board[combo[0]] === this.board[combo[1]] &&
     this.board[combo[1]] === this.board[combo[2]] &&
     this.positionTaken(combo[0])
   });
+   if(winningCombo !== undefined) {
+      return winningCombo
+   } else {
+     return false
+   }
 }
 
 Game.prototype.WIN_COMBINATIONS = [
@@ -28,6 +33,9 @@ Game.prototype.positionTaken = function(index) {
 }
 
 Game.prototype.winner = function() {
-  let winningCombo = this.won()
-  return this.board[winningCombo[0]]
+  const winningCombo = this.won()
+  if(winningCombo) {
+    return this.board[winningCombo[0]]
+  }
+  return false
 }
