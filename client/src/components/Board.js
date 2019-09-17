@@ -9,6 +9,9 @@ class Board extends Component {
 
     componentDidMount() {
         const newGame = new Game()
+        newGame.board[0] = 'X'
+        newGame.board[1] = 'X'
+        newGame.board[2] = 'X'
         debugger
     }
 

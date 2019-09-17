@@ -26,3 +26,8 @@ Game.prototype.WIN_COMBINATIONS = [
 Game.prototype.positionTaken = function(index) {
     return this.board[index] !== undefined
 }
+
+Game.prototype.winner = function() {
+  let winningCombo = this.won()
+  return this.board[winningCombo[0]]
+}
