@@ -8,7 +8,7 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        const g = new Game([])
+        const newGame = new Game()
         debugger
     }
 

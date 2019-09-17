@@ -1,14 +1,14 @@
 export default class Game {
-  constructor(board) {
+  constructor(board = new Array(9)) {
     this.board = board
   }
 }
 
-Game.prototype.won = function(board) {
+Game.prototype.won = function() {
   this.WIN_COMBINATIONS.find((combo) => {
-  board[combo[0]] == board[combo[1]] &&
-  board[combo[1]] == board[combo[2]] &&
-  this.positionTaken(board, combo[0])
+  this.board[combo[0]] === this.board[combo[1]] &&
+  this.board[combo[1]] === this.board[combo[2]] &&
+  this.positionTaken(combo[0])
   });
 }
 
@@ -23,6 +23,6 @@ Game.prototype.WIN_COMBINATIONS = [
   [6,4,2]
 ]
 
-// Game.prototype.positionTaken = function(index) {
-//   this.board[index] !== " "
-// }
+Game.prototype.positionTaken = function(index) {
+    return this.board[index] !== undefined
+}
