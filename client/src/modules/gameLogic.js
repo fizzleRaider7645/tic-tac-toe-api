@@ -5,10 +5,10 @@ export default class Game {
 }
 
 Game.prototype.won = function() {
-  this.WIN_COMBINATIONS.find((combo) => {
-  this.board[combo[0]] === this.board[combo[1]] &&
-  this.board[combo[1]] === this.board[combo[2]] &&
-  this.positionTaken(combo[0])
+  return this.WIN_COMBINATIONS.find((combo) => {
+    return this.board[combo[0]] === this.board[combo[1]] &&
+    this.board[combo[1]] === this.board[combo[2]] &&
+    this.positionTaken(combo[0])
   });
 }
 
