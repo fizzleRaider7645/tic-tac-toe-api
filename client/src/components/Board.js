@@ -8,11 +8,13 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        const newGame = new Game()
-        newGame.board[0] = 'X'
-        newGame.board[1] = 'X'
-        newGame.board[2] = 'X'
-        debugger
+        // const newGame = new Game()
+        // newGame.board[0] = 'X'
+        // newGame.board[1] = 'X'
+        // newGame.board[2] = 'X'
+        fetch('http://localhost:3000/games')
+            .then(res => res.json())
+            .then(res => console.log(res))
     }
 
     renderCell(i) {
