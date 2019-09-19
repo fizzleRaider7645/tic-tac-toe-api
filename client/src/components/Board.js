@@ -5,16 +5,19 @@ import Game from '../modules/gameLogic';
 class Board extends Component {
     constructor() {
         super()
+        this.state = {
+            grid: []
+        }
     }
 
     componentDidMount() {
-        // const newGame = new Game()
-        // newGame.board[0] = 'X'
-        // newGame.board[1] = 'X'
-        // newGame.board[2] = 'X'
+        const game = new Game()
+        debugger
         fetch('http://localhost:3000/games')
             .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => this.setState({
+                grid: res[0].state
+            }))
     }
 
     renderCell(i) {
@@ -25,7 +28,7 @@ class Board extends Component {
         return (
             <div className="board">
                 <div id="first-row"> 
-                {this.renderCell(0)}|
+                {this.renderCell(this.state.grid[0])}|
                 {this.renderCell(1)}|
                 {this.renderCell(2)}
                 </div>

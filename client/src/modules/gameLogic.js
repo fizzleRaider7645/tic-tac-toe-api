@@ -1,6 +1,8 @@
 export default class Game {
-  constructor(board = new Array(9)) {
+  constructor(id, board = new Array(9), turnCount = 0) {
+    this.id = id
     this.board = board
+    this.turnCount = turnCount
   }
 }
 
