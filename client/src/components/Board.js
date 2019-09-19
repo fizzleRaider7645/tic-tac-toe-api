@@ -12,14 +12,12 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        let game;
         fetch('http://localhost:3000/games')
             .then(res => res.json())
             .then(res => this.setState({
                 grid: res[0].state,
                 turnCount: res[0].turn_count
             }))
-            // debugger
     }
 
     renderCell(i) {
@@ -31,20 +29,20 @@ class Board extends Component {
             <div className="board">
                 <div id="first-row"> 
                 {this.renderCell(this.state.grid[0])}|
-                {this.renderCell(1)}|
-                {this.renderCell(2)}
+                {this.renderCell(this.state.grid[1])}|
+                {this.renderCell(this.state.grid[2])}
                 </div>
                 -------------
                 <div id="second-row">
-                {this.renderCell(3)}|
-                {this.renderCell(4)}|
-                {this.renderCell(5)}
+                {this.renderCell(this.state.grid[3])}|
+                {this.renderCell(this.state.grid[4])}|
+                {this.renderCell(this.state.grid[5])}
                 </div>
                 -------------
                 <div id="third-row">
-                {this.renderCell(6)}|
-                {this.renderCell(7)}|
-                {this.renderCell(8)}
+                {this.renderCell(this.state.grid[6])}|
+                {this.renderCell(this.state.grid[7])}|
+                {this.renderCell(this.state.grid[8])}
                 </div>
             </div>
         )

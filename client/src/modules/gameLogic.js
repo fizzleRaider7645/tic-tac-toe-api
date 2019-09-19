@@ -30,13 +30,40 @@ Game.prototype.WIN_COMBINATIONS = [
 ]
 
 Game.prototype.positionTaken = function(index) {
-    return this.board[index] !== undefined
+    return this.board[index] !== undefined;
 }
 
 Game.prototype.winner = function() {
-  const winningCombo = this.won()
+  const winningCombo = this.won();
   if(winningCombo) {
-    return this.board[winningCombo[0]]
+    return this.board[winningCombo[0]];
   }
   return false
 }
+
+Game.prototype.player = function() {
+  return this.turnCount % 2 ? 'X' : 'O';
+}
+
+Game.prototype.updateState = function(index) {
+  let token = this.player();
+  this.board[index] = token;
+}
+
+Game.prototype.doTurn = function(index) {
+  this.updateState(index);
+  this.turnCount++;
+}
+
+// function doTurn(square) {
+//   updateState(square);
+//   turn++;
+//   if (checkWinner()) {
+//     saveGame();
+//     resetBoard();
+//   } else if (turn === 9) {
+//     setMessage("Tie game.");
+//     saveGame();
+//     resetBoard();
+//   }
+// }
