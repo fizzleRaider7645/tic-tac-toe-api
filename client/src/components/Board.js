@@ -11,13 +11,14 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        const game = new Game()
-        debugger
+        let game;
         fetch('http://localhost:3000/games')
             .then(res => res.json())
-            .then(res => this.setState({
-                grid: res[0].state
-            }))
+            // .then(res => this.setState({
+            //     grid: res[0].state
+            // }))
+            .then(res => game = new Game(res[0].grid), 0)
+            debugger
     }
 
     renderCell(i) {
