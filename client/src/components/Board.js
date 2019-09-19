@@ -6,7 +6,8 @@ class Board extends Component {
     constructor() {
         super()
         this.state = {
-            grid: []
+            grid: [],
+            turnCount: 0
         }
     }
 
@@ -14,10 +15,9 @@ class Board extends Component {
         let game;
         fetch('http://localhost:3000/games')
             .then(res => res.json())
-            // .then(res => this.setState({
-            //     grid: res[0].state
-            // }))
-            .then(res => game = new Game(res[0].grid), 0)
+            .then(res => this.setState({
+                grid: res[0].state
+            }))
             debugger
     }
 
