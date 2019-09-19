@@ -16,9 +16,10 @@ class Board extends Component {
         fetch('http://localhost:3000/games')
             .then(res => res.json())
             .then(res => this.setState({
-                grid: res[0].state
+                grid: res[0].state,
+                turnCount: res[0].turn_count
             }))
-            debugger
+            // debugger
     }
 
     renderCell(i) {
