@@ -53,6 +53,9 @@ Game.prototype.updateState = function(index) {
 Game.prototype.doTurn = function(index) {
   this.updateState(index);
   this.turnCount++;
+  if(this.winner()) {
+
+  }
 }
 
 // function doTurn(square) {
