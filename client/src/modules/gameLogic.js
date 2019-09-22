@@ -3,6 +3,12 @@ export default class Game {
     this.board = board
     this.turnCount = turnCount
   }
+  
+  static loadPreviousGames() {
+    fetch('http://localhost:3000/games')
+    .then(res => res.json())
+    .then(res => console.log(res))
+  }
 }
 
 Game.prototype.won = function() {

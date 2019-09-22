@@ -13,7 +13,7 @@ class Board extends Component {
 
     componentDidMount() {
         const game = new Game()
-        game.saveGame()
+        Game.loadPreviousGames()
     }
 
     renderCell(i) {

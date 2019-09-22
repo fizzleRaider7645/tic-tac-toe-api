@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Board from './Board';
 import Menu from './Menu';
+import Game from '../modules/gameLogic';
 
-class Game extends Component {
+class GameContainer extends Component {
     constructor() {
         super()
     }
 
     render() {
         return (
-            <div id="Game">
+            <div id="game-container">
                 <div id="board">
                     <Board />
                 </div>
@@ -21,4 +22,4 @@ class Game extends Component {
     }
 }
 
-export default Game;
+export default GameContainer;
