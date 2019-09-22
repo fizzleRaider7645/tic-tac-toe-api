@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../App.css'
-const Cell = props => {
-    return (
-        <div className="cell">
-            {props.value}
+class Cell extends Component {
+    constructor(props) {
+        super()
+    }
+    handleClick = () => {
+        alert('click')
+    }
+
+    render() {
+        return (
+        <div onClick={this.handleClick} className="cell">
+            {this.props.value}
         </div>
-    )
+        )
+    }
 }
 
 export default Cell;

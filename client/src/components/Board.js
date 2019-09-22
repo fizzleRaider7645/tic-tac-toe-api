@@ -24,7 +24,7 @@ class Board extends Component {
         return (
             <div className="board">
                 {/* <div id="first-row">  */}
-                {this.renderCell(this.state.grid[0])}
+                {this.renderCell('X')}
                 {this.renderCell(this.state.grid[1])}
                 {this.renderCell(this.state.grid[2])}
                 {/* </div> */}
