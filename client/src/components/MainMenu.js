@@ -7,7 +7,7 @@ class MainMenu extends Component {
     
     render() {
         return (
-            <div id="main-menu-toggle">
+            <div id="main-menu">
                 <p onClick={this.props.handleClick} id="newGame">
                 New Game
                 </p>

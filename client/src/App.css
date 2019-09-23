@@ -1,10 +1,9 @@
 .App {
   text-align: center;
   font-family: "Press Start 2P";
-  /* background-color: white; */
 }
 
-#menu-game-toggle {
+#main-menu {
   background-color: white;
   width: 300px;
   height: 300px;

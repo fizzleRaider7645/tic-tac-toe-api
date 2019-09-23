@@ -2,7 +2,7 @@ import React,  { Component } from 'react';
 import './App.css';
 import GameContainer from './components/GameContainer';
 import MainMenu from './components/MainMenu';
-
+import LoadMenu from './components/LoadMenu'
 class App extends Component {
   constructor() {
     super()
@@ -16,18 +16,21 @@ class App extends Component {
     if(event.target.id === "newGame") {
       this.setState({
         gameInProgress: true
-      }, console.log(this.state))
+      })
     } else if(event.target.id === "loadGame") {
       this.setState({
         loadGame: true
-      }, console.log(this.state))
+      })
     }
   }
   render() {
     let game;
     let mainMenu;
+    let loadMenu;
     if(this.state.gameInProgress) {
       game = <GameContainer />
+    } else if(this.state.loadGame) {
+      loadMenu = <LoadMenu />
     } else {
       mainMenu = <MainMenu handleClick={this.handleClick}/>
     }
@@ -38,8 +41,8 @@ class App extends Component {
           <header className="App-header">
           Tic-Tac-Toe
         </header>
-        {this.state.gameInProgress ? "In Progress" : "Not"}
         {mainMenu}
+        {loadMenu}
         {game}
       </div>
     )
