@@ -12,7 +12,6 @@ class App extends Component {
     }
   }
   handleClick = (event) => {
-    console.log(event.target)
     if(event.target.id === "newGame") {
       this.setState({
         gameInProgress: true
@@ -23,12 +22,18 @@ class App extends Component {
       })
     }
   }
+
+  endGame = () => {
+    this.setState({
+      gameInProgress: false
+    })
+  }
   render() {
     let game;
     let mainMenu;
     let loadMenu;
     if(this.state.gameInProgress) {
-      game = <GameContainer />
+      game = <GameContainer endGame={this.endGame}/>
     } else if(this.state.loadGame) {
       loadMenu = <LoadMenu />
     } else {

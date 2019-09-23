@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Game from '../modules/gameLogic';
+import { fetchGames } from '../actions/gameActions'
 
 class LoadMenu extends Component {
     constructor(props) {

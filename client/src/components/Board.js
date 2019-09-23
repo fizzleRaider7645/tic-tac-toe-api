@@ -11,11 +11,6 @@ class Board extends Component {
         }
     }
 
-    componentDidMount() {
-        const game = new Game()
-        Game.loadPreviousGames()
-    }
-
     renderCell(i) {
         return <Cell value={i}/>
     }
