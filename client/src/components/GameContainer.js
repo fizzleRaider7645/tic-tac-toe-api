@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Board from './Board';
 // import Menu from './MainMenu';
-import Game from '../modules/gameLogic';
+// import Game from '../modules/gameLogic';
 
 class GameContainer extends Component {
     constructor() {
