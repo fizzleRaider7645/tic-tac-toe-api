@@ -63,6 +63,10 @@ Game.prototype.doTurn = function(index) {
   if(this.winner()) {
     this.saveGame()
     this.resetBoard()
+  } else if (this.turnCount === 9) {
+    alert("Tie game.");
+    this.saveGame();
+    this.resetBoard();
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Board from './Board';
-import Menu from './Menu';
+// import Menu from './MainMenu';
 import Game from '../modules/gameLogic';
 
 class GameContainer extends Component {
@@ -15,7 +15,7 @@ class GameContainer extends Component {
                     <Board />
                 </div>
                 <div id="menu">
-                    <Menu />
+                    {/* <Menu /> */}
                 </div>
             </div>
         )
