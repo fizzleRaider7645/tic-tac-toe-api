@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Game from '../modules/gameLogic';
-import { fetchGames } from '../actions/gameActions'
 
 class LoadMenu extends Component {
     constructor(props) {
@@ -19,7 +18,7 @@ class LoadMenu extends Component {
     render() {
         let games
         if(this.state.games) {
-            games = this.state.games.map(game => <p>{game.id}</p>)
+            games = this.state.games.map(game => <p key={game.id}>{game.id}</p>)
         }
         return (
             <div id="load-menu">

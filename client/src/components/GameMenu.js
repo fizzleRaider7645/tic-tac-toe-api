@@ -8,6 +8,7 @@ class GameMenu extends Component {
     render() {
         return (
             <div id="game-menu">
+                Game Menu
             </div>
         )
     }
