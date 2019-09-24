@@ -9,6 +9,8 @@ class GameMenu extends Component {
         return (
             <div id="game-menu">
                 Game Menu
+                Save
+                Exit
             </div>
         )
     }

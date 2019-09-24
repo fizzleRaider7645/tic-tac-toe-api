@@ -27,7 +27,7 @@ class Board extends Component {
         }).then(res => res.json())
           .then(res => this.setState({
             gameId: res.id,
-            // turnCount: res.turn_count
+            turnCount: res.turn_count
           }))
     }
 
