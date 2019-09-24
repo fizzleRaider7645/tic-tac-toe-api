@@ -6,6 +6,7 @@ class Board extends Component {
     constructor() {
         super()
         this.state = {
+            gameId: null,
             grid: [" ", " ", " ", " ", " ", " ", " ", " ", " "],
             turnCount: 0
         }
@@ -23,7 +24,11 @@ class Board extends Component {
             headers: {
             'Content-Type': 'application/json'
             }
-        });
+        }).then(res => res.json())
+          .then(res => this.setState({
+            gameId: res.id,
+            // turnCount: res.turn_count
+          }))
     }
 
     render() {
