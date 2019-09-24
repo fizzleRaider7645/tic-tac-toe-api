@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_195451) do
+ActiveRecord::Schema.define(version: 2019_09_24_134229) do
 
   create_table "games", force: :cascade do |t|
     t.text "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "turn_count"
+    t.integer "turn_count", default: 0
     t.string "name"
   end
 

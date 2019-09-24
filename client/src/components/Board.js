@@ -6,13 +6,24 @@ class Board extends Component {
     constructor() {
         super()
         this.state = {
-            grid: [],
+            grid: [" ", " ", " ", " ", " ", " ", " ", " ", " "],
             turnCount: 0
         }
     }
 
     renderCell(i) {
         return <Cell value={i}/>
+    }
+
+    componentDidMount() {
+        let url = 'http://localhost:3000/games';
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({state: this.state.grid}),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        });
     }
 
     render() {
