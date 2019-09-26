@@ -1,0 +1,4 @@
+export const GET_NEW_GAME = "GET_NEW_GAME";
+export const USER_LOGOUT = "USER_LOGOUT";
+export const UPDATE_BALANCE = "UPDATE_BALANCE";
+export const ACTUATE_TRANSACTION = "ACTUATE_TRANSACTION";

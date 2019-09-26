@@ -38,6 +38,10 @@ class Board extends Component {
           this.setState({
               gameLogic: game
           })
+
+        // fetch(`http://localhost:3000/games/${12}`)
+        //     .then(res => res.json())
+        //     .then(res => console.log(res))
     }
 
     render() {
