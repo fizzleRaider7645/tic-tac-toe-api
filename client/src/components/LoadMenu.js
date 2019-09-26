@@ -19,13 +19,13 @@ class LoadMenu extends Component {
     }
     
     render() {
-        // let games
-        // if(this.props.games) {
-            // games = this.props.state.game.map(game => <p onClick={this.handleClick} key={this.props.state.game.id}>{this.props.state.game.name}</p>)
-        // }
+        let games
+        if(this.props.games) {
+            games = this.props.games.map(game => <p onClick={this.handleClick} key={game.id}>{game.name}</p>)
+        }
         return (
             <div id="load-menu">
-                {/* {games} */}
+                {games}
             </div>
         )
     }
@@ -33,7 +33,7 @@ class LoadMenu extends Component {
 
 const mapStatetoProps = (state) => {
   return ({
-      state
+      games: state.games
   })
 }
 

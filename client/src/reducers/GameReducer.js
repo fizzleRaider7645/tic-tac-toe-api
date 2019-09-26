@@ -1,5 +1,5 @@
 import * as types from '../actions/ActionTypes'
-const initial = { board: [] }
+const initial = {}
 export default (state = initial, action) => {
     switch(action.type) {
         case types.GET_NEW_GAME:
