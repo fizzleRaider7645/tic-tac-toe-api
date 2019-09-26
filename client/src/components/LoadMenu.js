@@ -18,7 +18,7 @@ class LoadMenu extends Component {
     render() {
         let games
         if(this.state.games) {
-            games = this.state.games.map(game => <p key={game.id}>{game.id}</p>)
+            games = this.state.games.map(game => <p key={game.id}>{game.name}</p>)
         }
         return (
             <div id="load-menu">
