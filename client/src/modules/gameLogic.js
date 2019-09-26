@@ -54,14 +54,14 @@ Game.prototype.updateState = function(index) {
 Game.prototype.doTurn = function(index) {
   this.updateState(index);
   this.turnCount++;
-  if(this.winner()) {
-    this.saveGame()
-    this.resetBoard()
-  } else if (this.turnCount === 9) {
-    alert("Tie game.");
-    this.saveGame();
-    this.resetBoard();
-  }
+  // if(this.winner()) {
+  //   this.saveGame()
+  //   this.resetBoard()
+  // } else if (this.turnCount === 9) {
+  //   alert("Tie game.");
+  //   this.saveGame();
+  //   this.resetBoard();
+  // }
 }
 
 // Game.prototype.saveGame = function(state) {

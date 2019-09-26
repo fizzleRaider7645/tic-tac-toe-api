@@ -7,15 +7,10 @@ class Cell extends Component {
             value: null
         }
     }
-    handleClick = () => {
-        this.setState({
-            value: 'X'
-        })
-    }
 
     render() {
         return (
-        <div onClick={this.props.placeToken} className="cell">
+        <div onClick={this.props.placeToken} className="cell" id={this.props.id}>
             {this.props.value}
         </div>
         )
