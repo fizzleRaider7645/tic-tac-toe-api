@@ -26,22 +26,18 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        let url = 'http://localhost:3000/games';
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({state: this.state.grid}),
-            headers: {
-            'Content-Type': 'application/json'
-            }
-        })
+        // let url = 'http://localhost:3000/games';
+        // fetch(url, {
+        //     method: 'POST',
+        //     body: JSON.stringify({state: this.state.grid}),
+        //     headers: {
+        //     'Content-Type': 'application/json'
+        //     }
+        // })
           const game = new Game(this.state.grid, this.state.turnCount)
           this.setState({
               gameLogic: game
-          })
-
-        // fetch(`http://localhost:3000/games/${12}`)
-        //     .then(res => res.json())
-        //     .then(res => console.log(res))
+        })
     }
 
     render() {
