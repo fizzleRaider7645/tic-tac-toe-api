@@ -15,8 +15,8 @@ class Cell extends Component {
 
     render() {
         return (
-        <div onClick={this.handleClick} className="cell">
-            {this.state.value}
+        <div onClick={this.props.placeToken} className="cell">
+            {this.props.value}
         </div>
         )
     }

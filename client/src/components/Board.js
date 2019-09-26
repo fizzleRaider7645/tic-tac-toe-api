@@ -7,12 +7,19 @@ class Board extends Component {
         super()
         this.state = {
             grid: [" ", " ", " ", " ", " ", " ", " ", " ", " "],
-            turnCount: 0
+            turnCount: 0,
+            gameLogic: null
         }
     }
 
     renderCell(i) {
-        return <Cell value={i}/>
+        return <Cell value={i} placeToken={this.placeToken} />
+    }
+
+    placeToken(event) {
+        // const currentToken = this.state.gameLogic.player()
+        // gameLogic.updateState()
+        debugger
     }
 
     componentDidMount() {
@@ -30,27 +37,40 @@ class Board extends Component {
         //     turnCount: res.turn_count
         //   }))
           const game = new Game(this.state.grid, this.state.turnCount)
-          debugger
+          this.setState({
+              gameLogic: game
+          })
     }
 
     render() {
         return (
             <div className="board">
                 {/* <div id="first-row">  */}
-                {this.renderCell(this.state.grid[0])}
+                {/* {this.renderCell(this.state.grid[0])}
                 {this.renderCell(this.state.grid[1])}
-                {this.renderCell(this.state.grid[2])}
+                {this.renderCell(this.state.grid[2])} */}
                 {/* </div> */}
                 {/* <div id="second-row"> */}
-                {this.renderCell(this.state.grid[3])}
+                {/* {this.renderCell(this.state.grid[3])}
                 {this.renderCell(this.state.grid[4])}
-                {this.renderCell(this.state.grid[5])}
+                {this.renderCell(this.state.grid[5])} */}
                 {/* </div> */}
                 {/* <div id="third-row"> */}
-                {this.renderCell(this.state.grid[6])}
+                {/* {this.renderCell(this.state.grid[6])}
                 {this.renderCell(this.state.grid[7])}
-                {this.renderCell(this.state.grid[8])}
+                {this.renderCell(this.state.grid[8])} */}
                 {/* </div> */}
+                <Cell value={this.state.grid[0]} placeToken={this.placeToken} />
+                <Cell value={this.state.grid[1]} placeToken={this.placeToken} />
+                <Cell value={this.state.grid[2]} placeToken={this.placeToken} />
+
+                <Cell value={this.state.grid[3]} placeToken={this.placeToken} />
+                <Cell value={this.state.grid[4]} placeToken={this.placeToken} />
+                <Cell value={this.state.grid[5]} placeToken={this.placeToken} />
+
+                <Cell value={this.state.grid[6]} placeToken={this.placeToken} />
+                <Cell value={this.state.grid[7]} placeToken={this.placeToken} />
+                <Cell value={this.state.grid[8]} placeToken={this.placeToken} />
             </div>
         )
     }

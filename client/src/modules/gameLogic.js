@@ -42,7 +42,7 @@ Game.prototype.winner = function() {
 }
 
 Game.prototype.player = function() {
-  return this.turnCount % 2 ? 'X' : 'O';
+  return this.turnCount % 2 ? 'O' : 'X';
 }
 
 Game.prototype.updateState = function(index) {
