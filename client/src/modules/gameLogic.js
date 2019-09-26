@@ -30,7 +30,7 @@ Game.prototype.WIN_COMBINATIONS = [
 ]
 
 Game.prototype.positionTaken = function(index) {
-    return this.board[index] !== undefined;
+    return this.board[index] !== " ";
 }
 
 Game.prototype.winner = function() {
