@@ -29,13 +29,15 @@ class Board extends Component {
             gameId: res.id,
             turnCount: res.turn_count
           }))
+          const game = new Game()
+          debugger
     }
 
     render() {
         return (
             <div className="board">
                 {/* <div id="first-row">  */}
-                {this.renderCell('X')}
+                {this.renderCell(this.state.grid[0])}
                 {this.renderCell(this.state.grid[1])}
                 {this.renderCell(this.state.grid[2])}
                 {/* </div> */}

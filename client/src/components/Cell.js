@@ -3,15 +3,20 @@ import '../App.css'
 class Cell extends Component {
     constructor(props) {
         super()
+        this.state = {
+            value: null
+        }
     }
     handleClick = () => {
-        alert('click')
+        this.setState({
+            value: 'X'
+        })
     }
 
     render() {
         return (
         <div onClick={this.handleClick} className="cell">
-            {this.props.value}
+            {this.state.value}
         </div>
         )
     }

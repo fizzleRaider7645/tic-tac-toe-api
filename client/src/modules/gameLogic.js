@@ -1,5 +1,5 @@
 export default class Game {
-  constructor(board = new Array(9), turnCount = 0) {
+  constructor(board = null, turnCount = null) {
     this.board = board
     this.turnCount = turnCount
   }
@@ -64,16 +64,16 @@ Game.prototype.doTurn = function(index) {
   }
 }
 
-Game.prototype.saveGame = function(state) {
-  let url = 'http://localhost:3000/games';
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(state),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-}
+// Game.prototype.saveGame = function(state) {
+//   let url = 'http://localhost:3000/games';
+//   fetch(url, {
+//     method: 'POST',
+//     body: JSON.stringify(state),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   });
+// }
 
 Game.prototype.resetBoard = function() {
   this.turnCountturn = 0;
