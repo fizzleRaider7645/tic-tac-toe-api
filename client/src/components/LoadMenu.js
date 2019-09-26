@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Game from '../modules/gameLogic';
+import { connect } from 'react-redux'
 
 class LoadMenu extends Component {
     constructor(props) {
@@ -9,23 +10,31 @@ class LoadMenu extends Component {
         }
     }
 
+    handleClick = (event) => {
+        debugger
+    }
+
     componentDidMount() {
-        fetch('http://localhost:3000/games')
-        .then(res => res.json())
-        .then(res => this.setState({games: res}))
+        // console.log(this.props)
     }
     
     render() {
-        let games
-        if(this.state.games) {
-            games = this.state.games.map(game => <p key={game.id}>{game.name}</p>)
-        }
+        // let games
+        // if(this.props.games) {
+            // games = this.props.state.game.map(game => <p onClick={this.handleClick} key={this.props.state.game.id}>{this.props.state.game.name}</p>)
+        // }
         return (
             <div id="load-menu">
-                {games}
+                {/* {games} */}
             </div>
         )
     }
 }
 
-export default LoadMenu;
+const mapStatetoProps = (state) => {
+  return ({
+      state
+  })
+}
+
+export default connect(mapStatetoProps, null)(LoadMenu)

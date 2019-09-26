@@ -4,7 +4,7 @@ import GameContainer from './components/GameContainer';
 import MainMenu from './components/MainMenu';
 import LoadMenu from './components/LoadMenu'
 import { connect } from 'react-redux'
-import { getNewGame, loadGame } from './actions/GameActions';
+import { getNewGame, loadGame, loadGames } from './actions/GameActions';
 class App extends Component {
   constructor() {
     super()
@@ -24,7 +24,8 @@ class App extends Component {
       this.setState({
         loadGame: true
       })
-      this.props.loadGame(1)
+      // this.props.loadGame(1)
+      this.props.loadGames()
     }
   }
 
@@ -65,4 +66,4 @@ class App extends Component {
 //   })
 // }
 
-export default connect(null, { getNewGame, loadGame })(App)
+export default connect(null, { getNewGame, loadGame, loadGames })(App)

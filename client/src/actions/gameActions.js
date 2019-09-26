@@ -24,8 +24,6 @@ const setNewGame = (payload) => {
 export const loadGame = (gameId) => {
     return dispatch => {
         return fetch(`http://localhost:3000/games/${gameId}`, {
-            // method: 'POST',
-            // body: JSON.stringify({state: [" ", " ", " ", " ", " ", " ", " ", " ", " "]}),
             headers: {
             'Content-Type': 'application/json'
             }
@@ -38,6 +36,25 @@ export const loadGame = (gameId) => {
 const setLoadGame = (payload) => {
     return {
         type: types.LOAD_GAME,
+        payload
+    }
+}
+
+export const loadGames = () => {
+    return dispatch => {
+        return fetch(`http://localhost:3000/games`, {
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        }).then(res => res.json()).then(games => {
+            dispatch(setLoadedGames(games))
+        })
+    }
+}
+
+const setLoadedGames = (payload) => {
+    return {
+        type: types.LOAD_GAMES,
         payload
     }
 }

@@ -26,17 +26,9 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        // let url = 'http://localhost:3000/games';
-        // fetch(url, {
-        //     method: 'POST',
-        //     body: JSON.stringify({state: this.state.grid}),
-        //     headers: {
-        //     'Content-Type': 'application/json'
-        //     }
-        // })
-          const game = new Game(this.state.grid, this.state.turnCount)
-          this.setState({
-              gameLogic: game
+        const game = new Game(this.state.grid, this.state.turnCount)
+        this.setState({
+            gameLogic: game
         })
     }
 
@@ -75,3 +67,4 @@ class Board extends Component {
 }
 
 export default Board
+// export default connect(null, { getNewGame, loadGame })(App)
