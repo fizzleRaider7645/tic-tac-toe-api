@@ -3,6 +3,8 @@ import './App.css';
 import GameContainer from './components/GameContainer';
 import MainMenu from './components/MainMenu';
 import LoadMenu from './components/LoadMenu'
+import { connect } from 'react-redux'
+import { getNewGame } from './actions/GameActions';
 class App extends Component {
   constructor() {
     super()
@@ -16,6 +18,8 @@ class App extends Component {
       this.setState({
         gameInProgress: true
       })
+      // call GET_NEW_GAME action here
+      this.props.getNewGame()
     } else if(event.target.id === "loadGame") {
       this.setState({
         loadGame: true
@@ -54,4 +58,10 @@ class App extends Component {
   }
 }
 
-export default App;
+// const mapStatetoProps = (state) => {
+//   return ({
+//       user: state.user
+//   })
+// }
+
+export default connect(null, { getNewGame })(App)

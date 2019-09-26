@@ -25,7 +25,7 @@ export const getNewGame = () => {
     return dispatch => {
         return fetch('http://localhost:3000/games', {
             method: 'POST',
-            body: JSON.stringify({state: this.state.grid}),
+            body: JSON.stringify({state: [" ", " ", " ", " ", " ", " ", " ", " ", " "]}),
             headers: {
             'Content-Type': 'application/json'
             }
@@ -35,7 +35,7 @@ export const getNewGame = () => {
     }
 }
 
-setGame = (payload) => {
+const setGame = (payload) => {
     return {
         type: types.GET_NEW_GAME,
         payload

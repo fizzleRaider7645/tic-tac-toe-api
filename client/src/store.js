@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import accountReducer from './reducers/GameReducer'
+import gameReducer from './reducers/GameReducer'
 const reducers = combineReducers({
-  user: accountReducer,
+  game: gameReducer,
 });
 
 
