@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Game from '../modules/gameLogic';
 import { connect } from 'react-redux'
+import { loadGame } from '../actions/GameActions';
 
 class LoadMenu extends Component {
     constructor(props) {
@@ -11,17 +12,14 @@ class LoadMenu extends Component {
     }
 
     handleClick = (event) => {
-        debugger
+        const gameId = parseInt(event.target.id)
+        this.props.loadGame(gameId)
     }
 
-    componentDidMount() {
-        // console.log(this.props)
-    }
-    
     render() {
         let games
         if(this.props.games) {
-            games = this.props.games.map(game => <p onClick={this.handleClick} key={game.id}>{game.name}</p>)
+            games = this.props.games.map(game => <p onClick={this.handleClick} id={game.id} key={game.id}>{game.name}</p>)
         }
         return (
             <div id="load-menu">
@@ -37,4 +35,4 @@ const mapStatetoProps = (state) => {
   })
 }
 
-export default connect(mapStatetoProps, null)(LoadMenu)
+export default connect(mapStatetoProps, { loadGame })(LoadMenu)
