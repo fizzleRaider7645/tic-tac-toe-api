@@ -29,6 +29,12 @@ class App extends Component {
     }
   }
 
+  startSavedGame = () => {
+    this.setState({
+      gameInProgress: true
+    })
+  }
+
   endGame = () => {
     this.setState({
       gameInProgress: false
@@ -41,7 +47,7 @@ class App extends Component {
     if(this.state.gameInProgress) {
       game = <GameContainer endGame={this.endGame}/>
     } else if(this.state.loadGame) {
-      loadMenu = <LoadMenu />
+      loadMenu = <LoadMenu startSavedGame={this.startSavedGame}/>
     } else {
       mainMenu = <MainMenu handleClick={this.handleClick}/>
     }
