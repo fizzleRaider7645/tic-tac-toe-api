@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Cell from './Cell'
 import Game from '../modules/gameLogic';
 
@@ -35,22 +36,7 @@ class Board extends Component {
     render() {
         return (
             <div className="board">
-                {/* <div id="first-row">  */}
-                {/* {this.renderCell(this.state.grid[0])}
-                {this.renderCell(this.state.grid[1])}
-                {this.renderCell(this.state.grid[2])} */}
-                {/* </div> */}
-                {/* <div id="second-row"> */}
-                {/* {this.renderCell(this.state.grid[3])}
-                {this.renderCell(this.state.grid[4])}
-                {this.renderCell(this.state.grid[5])} */}
-                {/* </div> */}
-                {/* <div id="third-row"> */}
-                {/* {this.renderCell(this.state.grid[6])}
-                {this.renderCell(this.state.grid[7])}
-                {this.renderCell(this.state.grid[8])} */}
-                {/* </div> */}
-                <Cell id={0} value={this.state.grid[0]} placeToken={this.placeToken} />
+                {/* <Cell id={0} value={this.state.grid[0]} placeToken={this.placeToken} />
                 <Cell id={1} value={this.state.grid[1]} placeToken={this.placeToken} />
                 <Cell id={2} value={this.state.grid[2]} placeToken={this.placeToken} />
 
@@ -60,11 +46,27 @@ class Board extends Component {
 
                 <Cell id={6} value={this.state.grid[6]} placeToken={this.placeToken} />
                 <Cell id={7} value={this.state.grid[7]} placeToken={this.placeToken} />
-                <Cell id={8} value={this.state.grid[8]} placeToken={this.placeToken} />
+                <Cell id={8} value={this.state.grid[8]} placeToken={this.placeToken} /> */}
+                <Cell id={0} value={this.props.game.state ? this.props.game.state[0] : ""} placeToken={this.placeToken} />
+                <Cell id={1} value={this.props.game.state ? this.props.game.state[1] : ""} />
+                <Cell id={2} value={this.props.game.state ? this.props.game.state[2] : ""} />
+
+                <Cell id={3} value={this.props.game.state ? this.props.game.state[3] : ""} />
+                <Cell id={4} value={this.props.game.state ? this.props.game.state[4] : ""} />
+                <Cell id={5} value={this.props.game.state ? this.props.game.state[5] : ""} />
+
+                <Cell id={6} value={this.props.game.state ? this.props.game.state[6] : ""} />
+                <Cell id={7} value={this.props.game.state ? this.props.game.state[7] : ""} />
+                <Cell id={8} value={this.props.game.state ? this.props.game.state[8] : ""} />
             </div>
         )
     }
 }
 
-export default Board
-// export default connect(null, { getNewGame, loadGame })(App)
+// export default Board
+const mapStatetoProps = (state) => {
+    return {
+        game: state.game
+    }
+}
+export default connect(mapStatetoProps, {})(Board)

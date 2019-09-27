@@ -3,15 +3,16 @@ import '../App.css'
 class Cell extends Component {
     constructor(props) {
         super()
-        this.state = {
-            value: null
-        }
     }
 
     render() {
+        let value;
+        if(this.props.value) {
+            value = this.props.value
+        }
         return (
         <div onClick={this.props.placeToken} className="cell" id={this.props.id}>
-            {this.props.value}
+            {value}
         </div>
         )
     }
