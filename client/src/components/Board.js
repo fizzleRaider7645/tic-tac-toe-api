@@ -49,7 +49,6 @@ class Board extends Component {
                 <Cell id={6} value={this.props.game.state ? this.props.game.state[6] : ""} placeToken={this.placeToken}/>
                 <Cell id={7} value={this.props.game.state ? this.props.game.state[7] : ""} placeToken={this.placeToken}/>
                 <Cell id={8} value={this.props.game.state ? this.props.game.state[8] : ""} placeToken={this.placeToken}/>
-                {console.log(this.state)}
             </div>
         )
     }
