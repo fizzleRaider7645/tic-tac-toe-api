@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Board from './Board';
 import GameMenu from './GameMenu';
 
@@ -11,7 +12,7 @@ class GameContainer extends Component {
         return (
             <div id="game-container">
                 <div id="board">
-                    <Board />
+                    <Board game={this.props.game}/>
                 </div>
                 <div id="menu">
                     <GameMenu />
@@ -22,4 +23,10 @@ class GameContainer extends Component {
     }
 }
 
-export default GameContainer;
+const mapStatetoProps = (state) => {
+    return {
+        game: state.game
+    }
+}
+
+export default connect(mapStatetoProps, null)(GameContainer);

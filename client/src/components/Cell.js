@@ -6,13 +6,9 @@ class Cell extends Component {
     }
 
     render() {
-        let value;
-        if(this.props.value) {
-            value = this.props.value
-        }
         return (
         <div onClick={this.props.placeToken} className="cell" id={this.props.id}>
-            {value}
+            {this.props.value}
         </div>
         )
     }
