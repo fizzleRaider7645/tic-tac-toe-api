@@ -47,7 +47,12 @@ Game.prototype.player = function() {
 
 Game.prototype.updateState = function(index) {
   let token = this.player();
-  this.board[index] = token;
+  // this.board[index] = token;
+  if(this.positionTaken(index)) {
+    return
+  } else {
+    this.board[index] = token;
+  }
 }
 
 
