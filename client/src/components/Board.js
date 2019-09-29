@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Cell from './Cell'
 import Game from '../modules/gameLogic';
+import { placeToken } from '../actions/BoardActions';
 
 class Board extends Component {
     constructor() {
@@ -17,29 +18,28 @@ class Board extends Component {
     //     return <Cell value={i} placeToken={this.placeToken} />
     // }
 
-    placeToken = (event) => {
-        const index = parseInt(event.target.id)
-        this.state.gameLogic.doTurn(index)
-        this.setState({
-            grid: this.state.gameLogic.board,
-            turnCount: this.state.gameLogic.turnCount
-        })
-    }
+    // placeToken = (event) => {
+    //     const index = parseInt(event.target.id)
+    //     this.props.game.doTurn(index)
+    //     this.setState({
+    //         grid: this.props.game.gameLogic.board,
+    //         turnCount: this.props.game.gameLogic.turnCount
+    //     })
+    // }
 
     componentDidMount() {
         const game = new Game(this.props.game.state, this.props.game.turnCount)
-        debugger
-        this.setState({
-            grid: this.props.game,
-            gameLogic: game
-        })
+        // this.setState({
+        //     grid: this.props.game,
+        //     gameLogic: game
+        // })
     }
 
     render() {
         return (
             <div className="board">
-                <Cell id={0} value={this.props.game.state ? this.props.game.state[0] : ""} placeToken={this.placeToken}/>
-                <Cell id={1} value={this.props.game.state ? this.props.game.state[1] : ""} placeToken={this.placeToken}/>
+                <Cell id={0} value={this.props.game.state ? this.props.game.state[0] : ""} placeToken={this.props.placeToken}/>
+                {/* <Cell id={1} value={this.props.game.state ? this.props.game.state[1] : ""} placeToken={this.placeToken}/>
                 <Cell id={2} value={this.props.game.state ? this.props.game.state[2] : ""} placeToken={this.placeToken}/>
 
                 <Cell id={3} value={this.props.game.state ? this.props.game.state[3] : ""} placeToken={this.placeToken}/>
@@ -48,7 +48,7 @@ class Board extends Component {
 
                 <Cell id={6} value={this.props.game.state ? this.props.game.state[6] : ""} placeToken={this.placeToken}/>
                 <Cell id={7} value={this.props.game.state ? this.props.game.state[7] : ""} placeToken={this.placeToken}/>
-                <Cell id={8} value={this.props.game.state ? this.props.game.state[8] : ""} placeToken={this.placeToken}/>
+                <Cell id={8} value={this.props.game.state ? this.props.game.state[8] : ""} placeToken={this.placeToken}/> */}
             </div>
         )
     }
@@ -60,5 +60,5 @@ class Board extends Component {
 //         game: state.game
 //     }
 // }
-// export default connect(mapStatetoProps, {})(Board)
-export default Board
+export default connect(null, { placeToken })(Board)
+// export default Board
