@@ -85,3 +85,13 @@ Game.prototype.doTurn = function(index) {
 Game.prototype.resetBoard = function() {
   this.turnCountturn = 0;
 }
+
+Game.prototype.full = function() {
+  this.board.every(sqr => {
+    sqr != " "
+  })
+}
+
+Game.prototype.draw = function() {
+  this.full && !this.won
+}
