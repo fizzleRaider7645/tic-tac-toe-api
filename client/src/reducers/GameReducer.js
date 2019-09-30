@@ -12,11 +12,6 @@ export default (state = initial, action) => {
             return game
         case types.PLACE_TOKEN:
             game = new Game(state.board, state.turnCount)
-            // let newBoard = game.board.slice()
-            // newBoard[action.payload] = game.player()
-            // game.doTurn()
-            // let updatedGame = new Game(newBoard, game.turnCount)
-            // return updatedGame
             game.doTurn(action.payload)
             return game
         default:

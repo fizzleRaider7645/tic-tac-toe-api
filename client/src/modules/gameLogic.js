@@ -46,27 +46,29 @@ Game.prototype.player = function() {
 }
 
 Game.prototype.updateState = function(index) {
-  let token = this.player();
-  // this.board[index] = token;
+  const token = this.player();
   if(this.positionTaken(index)) {
     return
   } else {
-    this.board[index] = token;
+    let updatedBoard = [...this.board]
+    updatedBoard[index] = token
+    this.board = updatedBoard
+    this.turnCount++;
   }
 }
 
 
 Game.prototype.doTurn = function(index) {
   this.updateState(index);
-  this.turnCount++;
-  // if(this.winner()) {
+  if(this.winner()) {
+    alert("Winner")
   //   this.saveGame()
   //   this.resetBoard()
   // } else if (this.turnCount === 9) {
   //   alert("Tie game.");
   //   this.saveGame();
   //   this.resetBoard();
-  // }
+  }
 }
 
 // Game.prototype.saveGame = function(state) {
