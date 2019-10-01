@@ -1,6 +1,6 @@
 import * as types from './ActionTypes'
 
-export const getNewGame = () => {
+export const createNewGame = () => {
     return dispatch => {
         return fetch('http://localhost:3000/games', {
             method: 'POST',
@@ -68,4 +68,9 @@ export const saveGame = (state) => {
           'Content-Type': 'application/json'
         }
       });
+}
+export const clearStore = () => {
+    return {
+        type: types.CLEAR_STORE
+    }
 }

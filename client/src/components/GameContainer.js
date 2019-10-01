@@ -22,9 +22,9 @@ class GameContainer extends Component {
                     <Board game={this.props.game}/>
                 </div>
                 <div id="menu">
-                    <GameMenu saveGameClick={this.saveGameClick} boardState={this.props.game} />
+                    <GameMenu endGame={this.props.endGame} saveGameClick={this.saveGameClick} boardState={this.props.game} />
                 </div>
-                <button onClick={this.props.endGame}>End Game</button>
+                {/* <button onClick={this.props.endGame}>End Game</button> */}
             </div>
         )
     }
@@ -36,4 +36,4 @@ const mapStatetoProps = (state) => {
     }
 }
 
-export default connect(mapStatetoProps, {})(GameContainer);
+export default connect(mapStatetoProps, null)(GameContainer);

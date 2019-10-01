@@ -17,10 +17,8 @@ class LoadMenu extends Component {
     }
 
     render() {
-        // let games
-        // if(this.props.games) {
-            const games = this.props.games.map(game => <p onClick={this.handleClick} id={game.id} key={game.id}>{game.id ? game.id : "No Name"}</p>)
-        // }
+        
+        const games = this.props.games.map(game => <p onClick={this.handleClick} id={game.id} key={game.id}>{game.id ? game.id : "No Name"}</p>)
         return (
             <div id="load-menu">
                 {games}

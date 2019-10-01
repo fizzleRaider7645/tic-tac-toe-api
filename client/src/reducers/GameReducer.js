@@ -14,6 +14,8 @@ export default (state = initial, action) => {
             game = new Game(state.id, state.board, state.turnCount)
             game.doTurn(action.payload)
             return game
+        case types.CLEAR_STORE:
+            return {}
         default:
             return state;
     }

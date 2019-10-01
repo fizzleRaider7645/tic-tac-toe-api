@@ -10,7 +10,7 @@ class GameMenu extends Component {
         return (
             <div id="game-menu">
                 <p onClick={this.props.saveGameClick}>Save</p>
-                <p>Exit</p>
+                <p onClick={this.props.endGame}>Exit</p>
             </div>
         )
     }

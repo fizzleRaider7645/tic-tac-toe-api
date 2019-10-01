@@ -4,7 +4,8 @@ import GameContainer from './components/GameContainer';
 import MainMenu from './components/MainMenu';
 import LoadMenu from './components/LoadMenu'
 import { connect } from 'react-redux'
-import { getNewGame, loadGame, loadGames } from './actions/GameActions';
+import { createNewGame, loadGame, loadGames, clearStore } from './actions/GameActions';
+
 class App extends Component {
   constructor() {
     super()
@@ -18,13 +19,12 @@ class App extends Component {
       this.setState({
         gameInProgress: true
       })
-      // call GET_NEW_GAME action here
-      this.props.getNewGame()
+
+      this.props.createNewGame()
     } else if(event.target.id === "loadGame") {
       this.setState({
         loadGame: true
       })
-      // this.props.loadGame(1)
       this.props.loadGames()
     }
   }
@@ -37,8 +37,10 @@ class App extends Component {
 
   endGame = () => {
     this.setState({
-      gameInProgress: false
+      gameInProgress: false,
+      loadGame: false
     })
+    this.props.clearStore()
   }
   render() {
     let game;
@@ -66,10 +68,4 @@ class App extends Component {
   }
 }
 
-// const mapStatetoProps = (state) => {
-//   return ({
-//       user: state.user
-//   })
-// }
-
-export default connect(null, { getNewGame, loadGame, loadGames })(App)
+export default connect(null, { createNewGame, loadGame, loadGames, clearStore })(App)
