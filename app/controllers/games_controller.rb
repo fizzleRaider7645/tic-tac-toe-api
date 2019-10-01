@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    before_action :set_game, only: [:show, :update]
+    before_action :set_game, only: [:update]
 
     def index
       games = Game.all
@@ -7,6 +7,7 @@ class GamesController < ApplicationController
     end
   
     def show
+      @game = Game.find_by(id: params[:id])
       render json: @game
     end
   
@@ -17,7 +18,6 @@ class GamesController < ApplicationController
   
     def update
       @game.update(game_params)
-      binding.pry
       render json: @game
     end
 
