@@ -58,7 +58,9 @@ class App extends Component {
       
       <div className="App">
           <header className="App-header">
-          Tic-Tac-Toe
+            <div className="Inner-App-header">
+              Tic-Tac-Toe
+          </div>
         </header>
         {mainMenu}
         {loadMenu}

@@ -3,10 +3,15 @@
   font-family: "Press Start 2P";
 }
 
+body {
+  background-color:  #606060;
+}
+
 #main-menu {
   background-color: white;
+  border: solid;
   width: 300px;
-  height: 300px;
+  height: 90px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -17,6 +22,8 @@
 
 .App-header {
   background-color: #282c34;
+  border: solid;
+  border-color: black;
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -24,23 +31,37 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-shadow: -1px 0 #66FF00, 0 1px #66FF00, 1px 0 #66FF00, 0 -1px #66FF00;
+  scroll-padding-bottom: 50px;
 }
-.board
-{
+
+/* .Inner-App-header {
+  border: ridge;
+  border-color: black;
+  display: flex;
+  /* flex-direction: column; */
+  /* height: 100px; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* border-color: yellow; */
+/* } */
+
+.board {
 	width: 600px;
 	height: 600px;
 	margin: 0 auto;
   background-color: #C0C0C0;
-  color: #fff;
-  border: 6px solid #FF6666;
+  /* color: #fff; */
+  /* border: 6px solid #FF6666; */
+  border: 6px solid #66FF00;
   border-radius: 10px;
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
-.cell
-{
-  border: 6px solid #FF6666;
+.cell {
+  /* border: 6px solid #FF6666; */
+  border: 6px solid #282c34;;
   border-radius: 2px;
   font-family: Helvetica;
   font-weight: bold;
@@ -48,4 +69,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+#game-menu p {
+  background-color: #C0C0C0;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: solid;
+  border-color: black;
+  display: inline-block;
+  /* line-height: 1em; */
+  /* text-decoration: none; */
+  padding: 15px;
+  margin: 25px;
+}
+
