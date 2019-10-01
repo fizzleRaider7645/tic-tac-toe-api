@@ -1,5 +1,6 @@
 export default class Game {
-  constructor(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "], turnCount = 0) {
+  constructor(id, board = [" ", " ", " ", " ", " ", " ", " ", " ", " "], turnCount = 0) {
+    this.id = id
     this.board = board
     this.turnCount = turnCount
   }

@@ -62,7 +62,7 @@ const setLoadedGames = (payload) => {
 export const saveGame = (state) => {
     const url = 'http://localhost:3000/games';
     fetch(url, {
-        method: 'POST',
+        method: 'PATCH',
         body: JSON.stringify(state),
         headers: {
           'Content-Type': 'application/json'
