@@ -60,7 +60,9 @@ Game.prototype.updateState = function(index) {
 
 
 Game.prototype.doTurn = function(index) {
-  this.updateState(index);
+  if(this.inProgess()) {
+    this.updateState(index);
+  }
   if(this.winner()) {
     alert(`${this.winner()} Won!`)
   } else if(this.draw()) {
@@ -87,4 +89,14 @@ Game.prototype.draw = function() {
     return false
   }
 
+}
+
+Game.prototype.inProgess = function() {
+  const weHaveADraw = this.draw()
+  const weHaveWinner = this.winner()
+  if(!weHaveWinner && !weHaveADraw) {
+    return true
+  } else {
+    return false
+  }
 }

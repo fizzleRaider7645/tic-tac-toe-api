@@ -30,21 +30,12 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  text-shadow: -1px 0 #66FF00, 0 1px #66FF00, 1px 0 #66FF00, 0 -1px #66FF00;
+  /* color: white; */
+  color: #C0C0C0;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
   scroll-padding-bottom: 50px;
 }
 
-/* .Inner-App-header {
-  border: ridge;
-  border-color: black;
-  display: flex;
-  /* flex-direction: column; */
-  /* height: 100px; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* border-color: yellow; */
-/* } */
 
 .board {
 	width: 600px;
@@ -85,4 +76,6 @@ body {
   padding: 15px;
   margin: 25px;
 }
+
+
 
