@@ -62,28 +62,11 @@ Game.prototype.updateState = function(index) {
 Game.prototype.doTurn = function(index) {
   this.updateState(index);
   if(this.winner()) {
-    // return
     alert(`${this.winner()} Won!`)
-    // this.saveGame()
-  //   this.resetBoard()
-  // } else if (this.turnCount === 9) {
-  //   this.saveGame();
-  //   this.resetBoard();
   } else if(this.draw()) {
     alert("Tie game.");
   }
 }
-
-// Game.prototype.saveGame = function(state) {
-//   let url = 'http://localhost:3000/games';
-//   fetch(url, {
-//     method: 'POST',
-//     body: JSON.stringify(state),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-// }
 
 Game.prototype.reset = function() {
   this.turnCountturn = 0;

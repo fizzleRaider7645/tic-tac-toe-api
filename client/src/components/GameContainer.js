@@ -24,7 +24,6 @@ class GameContainer extends Component {
                 <div id="menu">
                     <GameMenu endGame={this.props.endGame} saveGameClick={this.saveGameClick} boardState={this.props.game} />
                 </div>
-                {/* <button onClick={this.props.endGame}>End Game</button> */}
             </div>
         )
     }
