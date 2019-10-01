@@ -61,7 +61,7 @@ Game.prototype.updateState = function(index) {
 Game.prototype.doTurn = function(index) {
   this.updateState(index);
   if(this.winner()) {
-    alert("Winner")
+    return
   //   this.saveGame()
   //   this.resetBoard()
   // } else if (this.turnCount === 9) {
@@ -87,11 +87,9 @@ Game.prototype.resetBoard = function() {
 }
 
 Game.prototype.full = function() {
-  this.board.every(sqr => {
-    sqr != " "
-  })
+  this.board.every(sqr => sqr !== " ")
 }
 
-Game.prototype.draw = function() {
-  this.full && !this.won
-}
+// Game.prototype.draw = function() {
+//   this.full && !this.winner
+// }
