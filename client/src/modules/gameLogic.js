@@ -62,13 +62,15 @@ Game.prototype.updateState = function(index) {
 Game.prototype.doTurn = function(index) {
   this.updateState(index);
   if(this.winner()) {
-    return
-  //   this.saveGame()
+    // return
+    alert(`${this.winner()} Won!`)
+    // this.saveGame()
   //   this.resetBoard()
   // } else if (this.turnCount === 9) {
-  //   alert("Tie game.");
   //   this.saveGame();
   //   this.resetBoard();
+  } else if(this.draw()) {
+    alert("Tie game.");
   }
 }
 
@@ -83,14 +85,23 @@ Game.prototype.doTurn = function(index) {
 //   });
 // }
 
-Game.prototype.resetBoard = function() {
+Game.prototype.reset = function() {
   this.turnCountturn = 0;
+  this.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 }
 
 Game.prototype.full = function() {
-  this.board.every(sqr => sqr !== " ")
+  const theBoard = this.board
+  return theBoard.every(sqr => sqr !== " ")
 }
 
-// Game.prototype.draw = function() {
-//   this.full && !this.winner
-// }
+Game.prototype.draw = function() {
+  const weHaveaWinner = this.winner()
+  const isFull = this.full()
+  if(!weHaveaWinner && isFull) {
+    return true
+  } else {
+    return false
+  }
+
+}
