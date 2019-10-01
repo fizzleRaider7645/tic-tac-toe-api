@@ -17,16 +17,17 @@ class GamesController < ApplicationController
   
     def update
       @game.update(game_params)
+      binding.pry
       render json: @game
     end
 
     private
 
     def game_params
-      params.require(:game).permit(state: [])
+      params.require(:game).permit(:id, :turn_count, state: [])
     end
   
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.find_by(id: params[:game][:id])
     end
 end

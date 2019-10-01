@@ -11,9 +11,8 @@ class GameContainer extends Component {
 
 
     saveGameClick = () => {
-        const gameData = this.props.game
-        debugger
-        // saveGame(gameData)
+        const gameData = {game:{id: this.props.game.id, state: this.props.game.board, turn_count: this.props.game.turnCount}}
+        saveGame(gameData)
     }
 
     render() {

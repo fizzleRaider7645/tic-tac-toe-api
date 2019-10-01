@@ -60,7 +60,7 @@ const setLoadedGames = (payload) => {
 }
 
 export const saveGame = (state) => {
-    const url = 'http://localhost:3000/games';
+    const url = `http://localhost:3000/games/${state.id}`;
     fetch(url, {
         method: 'PATCH',
         body: JSON.stringify(state),
