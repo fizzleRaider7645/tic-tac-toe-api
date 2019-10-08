@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DrawScroll = props => {
+const DrawScroll = () => {
     return (
         <div id="winner-scroll">
             Draw!
