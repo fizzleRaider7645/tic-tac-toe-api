@@ -21,6 +21,7 @@ const GameMenu = props => {
     return (
         <div id="game-menu">
             <p onClick={props.saveGameClick}>Save</p>
+            <p>Restart</p>
             <p onClick={props.endGame}>Exit</p>
         </div>
     )
