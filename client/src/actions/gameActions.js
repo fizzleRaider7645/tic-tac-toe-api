@@ -78,6 +78,9 @@ export const clearStore = () => {
 
 export const restartGame = (state) => {
     const game = new Game(state.game.id, state.game.state, state.game.turn_count)
-    game.reset()
-    debugger
+    // saveGame(game)
+    return {
+        type: types.RESTART_GAME,
+        game
+    }
 }

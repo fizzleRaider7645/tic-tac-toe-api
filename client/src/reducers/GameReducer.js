@@ -1,5 +1,7 @@
 import * as types from '../actions/ActionTypes'
 import Game from '../modules/gameLogic'
+import { saveGame } from '../actions/GameActions';
+
 const initial = {}
 export default (state = initial, action) => {
     let game;
@@ -13,6 +15,11 @@ export default (state = initial, action) => {
         case types.PLACE_TOKEN:
             game = new Game(state.id, state.board, state.turnCount)
             game.doTurn(action.payload)
+            return game
+        case types.RESTART_GAME:
+            game = new Game(state.id, state.board, state.turnCount)
+            game.reset()
+            saveGame(game)
             return game
         case types.CLEAR_STORE:
             return {}

@@ -12,9 +12,9 @@ class GameContainer extends Component {
         alert("Saved")
     }
 
-    restartGameClick = () => {
+    restartGameClick = (dispatch) => {
         const gameData = {game:{id: this.props.game.id, state: this.props.game.board, turn_count: this.props.game.turnCount}}
-        restartGame(gameData)
+        this.props.restartGame(gameData)
     }
 
     render() {
