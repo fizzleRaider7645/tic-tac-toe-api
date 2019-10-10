@@ -1,5 +1,5 @@
 import * as types from './ActionTypes'
-import gameLogic from '../modules/gameLogic';
+import Game from '../modules/gameLogic';
 
 export const createNewGame = () => {
     return dispatch => {
@@ -77,13 +77,7 @@ export const clearStore = () => {
 }
 
 export const restartGame = (state) => {
+    const game = new Game(state.game.id, state.game.state, state.game.turn_count)
+    game.reset()
     debugger
-    // const url = `http://localhost:3000/games/${state.id}`;
-    // fetch(url, {
-    //     method: 'PATCH',
-    //     body: JSON.stringify(state),
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    // });
 }
