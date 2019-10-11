@@ -71,8 +71,9 @@ Game.prototype.doTurn = function(index) {
 }
 
 Game.prototype.reset = function() {
+  const resetBoard = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   this.turnCount = 0;
-  this.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  this.board = resetBoard
 }
 
 Game.prototype.full = function() {

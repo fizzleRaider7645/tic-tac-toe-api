@@ -19,7 +19,6 @@ export default (state = initial, action) => {
         case types.RESTART_GAME:
             game = new Game(state.id, state.board, state.turnCount)
             game.reset()
-            saveGame(game)
             return game
         case types.CLEAR_STORE:
             return {}

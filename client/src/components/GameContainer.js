@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Board from './Board';
 import GameMenu from './GameMenu';
+import Game from '../modules/gameLogic';
 import { saveGame, restartGame } from '../actions/GameActions';
 
 class GameContainer extends Component {
@@ -12,7 +13,8 @@ class GameContainer extends Component {
         alert("Saved")
     }
 
-    restartGameClick = (dispatch) => {
+    restartGameClick = () => {
+        // let game = new Game(this.props.game.id, this.props.game.board, this.props.game.turnCount)
         const gameData = {game:{id: this.props.game.id, state: this.props.game.board, turn_count: this.props.game.turnCount}}
         this.props.restartGame(gameData)
     }
