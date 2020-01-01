@@ -22,6 +22,7 @@ class PlayerSelectMenu extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        this.props.startNewGame()
         this.props.createNewGame(this.state)
     }
 
@@ -29,7 +30,7 @@ class PlayerSelectMenu extends Component {
        return (
            <div id="player-select-menu">
                <form onSubmit={this.handleSubmit}>
-                   <h3>Select Human Players</h3>
+                   <h3>Select Computer Players</h3>
                    <p>
                        <input onChange={this.handleChange} value={!!this.state.player1} id="player1" type="checkbox"></input>
                        <label htmlFor="player1">Player 1</label>

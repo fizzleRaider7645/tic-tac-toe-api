@@ -6,17 +6,16 @@ import {
     Link
   } from "react-router-dom";
 import PlayerSelectMenu from './PlayerSelectMenu';
-import LoadMenu from './LoadMenu';
 
 const MainMenu = props => {
     return (
         <Router>
             <div id="main-menu">
-                <p><Link id="newGame" to="/playerselect">Start New Game</Link></p>
-                <p id="loadGame"><Link id="loadGame" onClick={props.handleClick} to="/loadmenu">Load Game</Link></p>
+                <p><Link id="newGame" to="/">Start New Game</Link></p>
+                <p id="loadGame"><Link id="loadGame" onClick={props.handleClick} to="/">Load Game</Link></p>
                 <Switch>
                     <Route exact path="/playerselect">
-                        <PlayerSelectMenu/>
+                        <PlayerSelectMenu startNewGame={props.startNewGame}/>
                     </Route>
                 </Switch>
             </div>

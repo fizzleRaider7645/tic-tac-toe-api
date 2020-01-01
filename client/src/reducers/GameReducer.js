@@ -7,7 +7,7 @@ export default (state = initial, action) => {
     let game;
     switch(action.type) {
         case types.GET_NEW_GAME:
-            game = new Game(action.payload.id, action.payload.state, action.payload.turn_count)
+            game = new Game(action.payload.id, action.payload.state, action.payload.turn_count, action.payload.players)
             return game
         case types.LOAD_GAME:
             game = new Game(action.payload.id, action.payload.state, action.payload.turn_count)

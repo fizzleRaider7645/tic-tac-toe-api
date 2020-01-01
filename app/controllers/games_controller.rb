@@ -19,7 +19,6 @@ class GamesController < ApplicationController
         new_player.ai = true if v
         game.players << new_player
       end
-      binding.pry
       render json: game, status: 201
     end
   
