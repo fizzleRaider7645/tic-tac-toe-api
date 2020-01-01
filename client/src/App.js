@@ -14,13 +14,20 @@ class App extends Component {
       loadGame: false
     }
   }
+
+  playerSelect = () => {
+    debugger
+  }
+
   handleClick = (event) => {
     if(event.target.id === "newGame") {
-      this.setState({
-        gameInProgress: true
-      })
+      // this.setState({
+      //   gameInProgress: true
+      // })
 
-      this.props.createNewGame()
+      // this.props.createNewGame()
+
+
     } else if(event.target.id === "loadGame") {
       this.setState({
         loadGame: true
@@ -51,7 +58,7 @@ class App extends Component {
     } else if(this.state.loadGame) {
       loadMenu = <LoadMenu startSavedGame={this.startSavedGame}/>
     } else {
-      mainMenu = <MainMenu handleClick={this.handleClick}/>
+      mainMenu = <MainMenu playerSelect={this.playerSelect} handleClick={this.handleClick}/>
     }
 
     return (

@@ -1,37 +1,40 @@
-// import React, { Component } from 'react';
 import React from 'react'
-
-// class MainMenu extends Component {
-//     constructor(props) {
-//         super(props)
-//     }
-    
-//     render() {
-//         return (
-//             <div id="main-menu">
-//                 <p onClick={this.props.handleClick} id="newGame">
-//                 New Game
-//                 </p>
-                
-//                 <p onClick={this.props.handleClick} id="loadGame">
-//                 Load Game
-//                 </p>
-//             </div>
-//         )
-//     }
-// }
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import PlayerSelectMenu from './PlayerSelectMenu';
+import LoadMenu from './LoadMenu';
 
 const MainMenu = props => {
     return (
-    <div id="main-menu">
-        <p onClick={props.handleClick} id="newGame">
+        <Router>
+            <div id="main-menu">
+                <p id="newGame"><Link to="/playerselect">Start New Game</Link></p>
+                <p id="loadGame"><Link to="/loadmenu">Load Game</Link></p>
+                <Switch>
+                    <Route exact path="/playerselect">
+                        <PlayerSelectMenu />
+                    </Route>
+
+                    <Route exact path="/loadmenu">
+                        <LoadMenu />
+                    </Route>
+
+                </Switch>
+            </div>
+        </Router>
+    // <div id="main-menu">
+        /* <p onClick={props.handleClick, props.playerSelect} id="newGame">
             New Game
             </p>
             
         <p onClick={props.handleClick} id="loadGame">
             Load Game
-            </p>
-        </div>
+            </p> */
+        // </div>
     )
 }
 

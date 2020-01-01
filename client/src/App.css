@@ -7,6 +7,10 @@ body {
   background-color:  #606060;
 }
 
+.App-header {
+  align-content: center;
+}
+
 #main-menu {
   background-color: yellow;
   border: solid;
