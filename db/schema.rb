@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_01_200036) do
+ActiveRecord::Schema.define(version: 2020_01_01_201350) do
 
   create_table "games", force: :cascade do |t|
     t.text "state"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_01_200036) do
 
   create_table "players", force: :cascade do |t|
     t.boolean "ai", default: false
+    t.integer "game_id"
   end
 
 end

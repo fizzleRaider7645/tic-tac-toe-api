@@ -12,8 +12,14 @@ class GamesController < ApplicationController
     end
   
     def create
-      binding.pry
       game = Game.create(game_params)
+      players = players_params
+      players.each do |k,v|
+        new_player = Player.new
+        new_player.ai = true if v
+        game.players << new_player
+      end
+      binding.pry
       render json: game, status: 201
     end
   
@@ -26,6 +32,10 @@ class GamesController < ApplicationController
 
     def game_params
       params.require(:game).permit(:id, :turn_count, state: [])
+    end
+
+    def players_params
+      params.require(:players).permit(:player1, :player2)
     end
   
     def set_game
