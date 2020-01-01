@@ -12,11 +12,11 @@ const MainMenu = props => {
     return (
         <Router>
             <div id="main-menu">
-                <p id="newGame"><Link to="/playerselect">Start New Game</Link></p>
+                <p><Link id="newGame" to="/playerselect">Start New Game</Link></p>
                 <p id="loadGame"><Link to="/loadmenu">Load Game</Link></p>
                 <Switch>
                     <Route exact path="/playerselect">
-                        <PlayerSelectMenu />
+                        <PlayerSelectMenu/>
                     </Route>
 
                     <Route exact path="/loadmenu">
@@ -27,7 +27,7 @@ const MainMenu = props => {
             </div>
         </Router>
     // <div id="main-menu">
-        /* <p onClick={props.handleClick, props.playerSelect} id="newGame">
+        /* <p onClick={props.handleClick} id="newGame">
             New Game
             </p>
             
