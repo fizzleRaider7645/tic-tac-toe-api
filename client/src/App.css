@@ -81,5 +81,9 @@ body {
   margin: 25px;
 }
 
+#player-select-menu {
+  float: right;
+}
+
 
 

@@ -1,11 +1,11 @@
 import * as types from './ActionTypes'
 import Game from '../modules/gameLogic';
 
-export const createNewGame = () => {
+export const createNewGame = (state) => {
     return dispatch => {
         return fetch('http://localhost:3000/games', {
             method: 'POST',
-            body: JSON.stringify({state: [" ", " ", " ", " ", " ", " ", " ", " ", " "]}),
+            body: JSON.stringify({state: [" ", " ", " ", " ", " ", " ", " ", " ", " "], players: state}),
             headers: {
             'Content-Type': 'application/json'
             }

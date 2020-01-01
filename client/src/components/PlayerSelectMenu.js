@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import { createNewGame } from '../actions/GameActions';
+import { connect } from 'react-redux'
 
 class PlayerSelectMenu extends Component {
     constructor() {
@@ -20,12 +22,13 @@ class PlayerSelectMenu extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        this.props.createNewGame(this.state)
         console.log(this.state)
     }
 
    render() {
        return (
-           <div>
+           <div id="player-select-menu">
                <form onSubmit={this.handleSubmit}>
                    <h3>Select Human Players</h3>
                    <p>
@@ -44,4 +47,5 @@ class PlayerSelectMenu extends Component {
    }
 }
 
-export default PlayerSelectMenu
+// export default PlayerSelectMenu
+export default connect(null, { createNewGame })(PlayerSelectMenu)
