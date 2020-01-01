@@ -14,7 +14,7 @@ const MainMenu = props => {
                 <p><Link id="newGame" to="/">Start New Game</Link></p>
                 <p id="loadGame"><Link id="loadGame" onClick={props.handleClick} to="/">Load Game</Link></p>
                 <Switch>
-                    <Route exact path="/playerselect">
+                    <Route exact path="/">
                         <PlayerSelectMenu startNewGame={props.startNewGame}/>
                     </Route>
                 </Switch>

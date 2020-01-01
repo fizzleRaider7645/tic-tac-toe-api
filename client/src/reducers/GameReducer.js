@@ -10,7 +10,7 @@ export default (state = initial, action) => {
             game = new Game(action.payload.id, action.payload.state, action.payload.turn_count, action.payload.players)
             return game
         case types.LOAD_GAME:
-            game = new Game(action.payload.id, action.payload.state, action.payload.turn_count)
+            game = new Game(action.payload.id, action.payload.state, action.payload.turn_count, action.payload.players)
             return game
         case types.PLACE_TOKEN:
             game = new Game(state.id, state.board, state.turnCount)

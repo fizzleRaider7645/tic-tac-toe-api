@@ -33,12 +33,12 @@ class PlayerSelectMenu extends Component {
                    <h3>Select Computer Players</h3>
                    <p>
                        <input onChange={this.handleChange} value={!!this.state.player1} id="player1" type="checkbox"></input>
-                       <label htmlFor="player1">Player 1</label>
+                       <label htmlFor="player1">Player X</label>
                     </p>
                     
                     <p>
                         <input onChange={this.handleChange} value={!!this.state.player2} id="player2" type="checkbox"></input>
-                        <label htmlFor="player2">Player 2</label>
+                        <label htmlFor="player2">Player O</label>
                    </p>
                    <button type="submit">Submit</button>
                </form>
