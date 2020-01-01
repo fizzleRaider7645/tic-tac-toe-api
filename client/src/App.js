@@ -16,26 +16,28 @@ class App extends Component {
     }
   }
 
-  playerSelect = () => {
-    debugger
-  }
-
   handleClick = (event) => {
     event.preventDefault()
-    debugger
-    if(event.target.id === "newGame") {
-      this.setState({
-        gameInProgress: true
-      })
-      // this.props.createNewGame()
+    // if(event.target.id === "newGame") {
+    //   this.setState({
+    //     gameInProgress: true
+    //   })
+    //   this.props.createNewGame()
 
 
-    } else if(event.target.id === "loadGame") {
-      this.setState({
-        loadGame: true
-      })
-      this.props.loadGames()
-    }
+    // } else if(event.target.id === "loadGame") {
+    //   this.setState({
+    //     loadGame: true
+    //   })
+    //   this.props.loadGames()
+    // }
+
+    if(event.target.id === "loadGame") {
+        this.setState({
+          loadGame: true
+        })
+        this.props.loadGames()
+      }
   }
 
   startSavedGame = () => {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_134229) do
+ActiveRecord::Schema.define(version: 2020_01_01_200036) do
 
   create_table "games", force: :cascade do |t|
     t.text "state"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2019_09_24_134229) do
     t.datetime "updated_at", null: false
     t.integer "turn_count", default: 0
     t.string "name"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.boolean "ai", default: false
   end
 
 end

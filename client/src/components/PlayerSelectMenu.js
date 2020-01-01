@@ -23,7 +23,6 @@ class PlayerSelectMenu extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.createNewGame(this.state)
-        console.log(this.state)
     }
 
    render() {
